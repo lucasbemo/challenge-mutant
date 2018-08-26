@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'com.lucasbemo.lab.reactivemutant'
+group 'com.lucasbemo.lab.challenge.mutant'
 version '1.0'
 
 sourceCompatibility = 1.8
@@ -26,12 +26,12 @@ repositories {
 }
 
 bootJar {
-    baseName = 'reactive-mutant'
+    baseName = 'challenge-mutant'
     version =  '0.0.1'
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-webflux")
+    compile("org.springframework.boot:spring-boot-starter-web")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

@@ -2,6 +2,7 @@ package com.lucasbemo.lab.mutantreactive.service;
 
 import org.springframework.stereotype.Service;
 
+import java.rmi.server.ExportException;
 import java.util.Arrays;
 
 /**
@@ -16,9 +17,11 @@ public class MutantService {
      * @param dna
      * @return
      */
-    public static boolean isMutant(String[] dna) {
+    public static boolean isMutant(String[] dna)  {
 
-        if (MutantService.isValidDna(dna))
+        if (!MutantService.isValidDna(dna)) {
+            return false;
+        }
 
         if (MutantService.matchHorizontal(dna)) {
             return true;
@@ -29,6 +32,7 @@ public class MutantService {
         if (MutantService.matchOblique(dna)) {
             return true;
         }
+
         return false;
     }
 
@@ -67,6 +71,7 @@ public class MutantService {
                 break;
             }
         }
+
         return condiction;
     }
 
