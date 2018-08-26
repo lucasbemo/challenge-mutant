@@ -7,46 +7,62 @@ import java.util.Arrays;
 /**
  * @author lucasbemo
  */
-@Service
 public class MutantService {
 
-    public boolean isMutant(String[] dna) {
+    private static String VALID_LETTERS_MUTANT_DNA = "ACGT";
 
-        if (isValidDna(dna))
+    /**
+     * Verifique se o dna informado é de um mutante ou não.
+     * @param dna
+     * @return
+     */
+    public static boolean isMutant(String[] dna) {
 
-        if (matchHorizontal(dna)) {
+        if (MutantService.isValidDna(dna))
+
+        if (MutantService.matchHorizontal(dna)) {
             return true;
         }
-        if (matchVertical(dna)) {
+        if (MutantService.matchVertical(dna)) {
             return true;
         }
-        if (matchOblique(dna)) {
+        if (MutantService.matchOblique(dna)) {
             return true;
         }
         return false;
     }
 
-    private boolean isValidDna(String[] dna) {
+    /**
+     * Verifica se o DNA informado é válido.
+     * @param dna
+     * @return
+     */
+    private static boolean isValidDna(String[] dna) {
         if (dna == null) {
             return false;
         }
 
-        if (!isValidLengthDna(dna)) {
+        if (!MutantService.isValidLengthDna(dna)) {
             return false;
         }
 
-        if (!isValidItens(dna)) {
+        if (!MutantService.isValidItens(dna)) {
             return false;
         }
 
         return true;
     }
 
-    private boolean isValidItens(String[] dna) {
+    /**
+     * Verifica se os itens do DNA contém as letras válidas.
+     * @param dna
+     * @return
+     */
+    public static boolean isValidItens(String[] dna) {
         boolean condiction = true;
 
         for (String item: dna) {
-            if (!item.matches("[ACGT]+")) {
+            if (!item.matches("["+VALID_LETTERS_MUTANT_DNA+"]+")) {
                 condiction = false;
                 break;
             }
@@ -59,7 +75,7 @@ public class MutantService {
      * @param dna
      * @return
      */
-    public boolean isValidLengthDna(String[] dna) {
+    public static boolean isValidLengthDna(String[] dna) {
         int columnLength = dna[0].length();
         int dnaLegth = dna.length;
 
@@ -84,7 +100,12 @@ public class MutantService {
         return false;
     }
 
-    public boolean matchHorizontal(String[] dna) {
+    /**
+     * Verifica se o DNA informado é mutant baseado somente no layout Horizontal.
+     * @param dna
+     * @return
+     */
+    public static boolean matchHorizontal(String[] dna) {
         int repetedItem =0;
 
         for (String item: dna) {
@@ -112,7 +133,12 @@ public class MutantService {
         return (repetedItem == 3? true: false);
     }
 
-    public boolean matchVertical(String[] dna) {
+    /**
+     * Verifica se o DNA informado é mutant baseado somente no layout Vertical.
+     * @param dna
+     * @return
+     */
+    public static boolean matchVertical(String[] dna) {
         int matchedItens = 0;
 
         for (int columnIdx = 0; columnIdx < dna.length; columnIdx++) {
@@ -141,17 +167,22 @@ public class MutantService {
         return (matchedItens == 3? true: false);
     }
 
-    public boolean matchOblique(String[] dna) {
-        if (matchObliqueFromLeft(dna)) {
+    /**
+     * Verifica se o DNA informado é mutant baseado somente no layout Oblique.
+     * @param dna
+     * @return
+     */
+    public static boolean matchOblique(String[] dna) {
+        if (MutantService.matchObliqueFromLeft(dna)) {
             return true;
         }
-        if (matchObliqueFromRight(dna)) {
+        if (MutantService.matchObliqueFromRight(dna)) {
             return true;
         }
         return false;
     }
 
-    private boolean matchObliqueFromLeft(String[] dna) {
+    private static boolean matchObliqueFromLeft(String[] dna) {
         int matchedItens = 0;
         int halfMatrix = 0;
 
@@ -195,7 +226,7 @@ public class MutantService {
         return (matchedItens == 3? true: false);
     }
 
-    private boolean matchObliqueFromRight(String[] dna) {
+    private static boolean matchObliqueFromRight(String[] dna) {
         int matchedItens = 0;
         int halfMatrix = 0;
 
