@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'com.lucasbemo.lab.mutant'
+group 'com.lucasbemo.lab.reactivemutant'
 version '1.0'
 
 sourceCompatibility = 1.8
@@ -26,7 +26,7 @@ repositories {
 }
 
 bootJar {
-    baseName = 'mutant-reactive'
+    baseName = 'reactive-mutant'
     version =  '0.0.1'
 }
 
