@@ -267,22 +267,13 @@ public class MutantUtilTest {
             ""
     };
 
-    public static String[] DNA_WITH_EMPTY_FILDS_INTERLEAVED = {
-            "",
-            "TAC",
-            "",
-            "TAC",
-            "",
-            "TAC"
-    };
-
-    public static String[] DNA_WITH_LESS_THAN_4_FIELDS = {
-            "ATG",
-            "TAC",
-            "ATA",
-            "TAC",
-            "ATG",
-            "TAC"
+    public static String[] DNA_WITH_LESS_SPECIAL_ITENS = {
+            "ATG CA",
+            "AAAA\"AAAAAA",
+            "T\'TTTTT",
+            "CC!CCCCC",
+            "@GGGGGGGG",
+            "GGGGÇGGGG"
     };
     public static String[] DNA_WITH_LESS_THAN_4_FIELDS_INTERLEAVED = {
             "ATG",
@@ -299,5 +290,13 @@ public class MutantUtilTest {
             "]{+=\"",
             "*(?^!@",
             "q!w@e$"
+    };
+
+    public static String[] DNA_VALID_NOT_NXN = {
+            "ATGCAT",
+            "AAAAAAAAAA",
+            "TTTTTTT",
+            "CCCCCCCC",
+            "GGGGGGGGG",
     };
 }

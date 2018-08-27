@@ -41,7 +41,7 @@ public class MutantService {
      * @param dna
      * @return
      */
-    private static boolean isValidDna(String[] dna) {
+    public static boolean isValidDna(String[] dna) {
         if (dna == null) {
             return false;
         }

@@ -144,14 +144,31 @@ public class MutantServiceTest {
     public void isValidItens() throws Exception {
         String[] validDna = new String[] {"ATGCAT", "AAAAAAAAAA", "TTTTTTT", "CCCCCCCC", "GGGGGGGGG"};
 
-        assertTrue(MutantService.isValidItens(validDna));
+        assertFalse(MutantService.isValidDna(validDna));
     }
 
-    public void isInvalidItens() throws Exception {
-        String[] invalidDna = new String[] {
-                "ATG CA", "AAAA\"AAAAAA", "T\'TTTTT", "CC!CCCCC", "@GGGGGGGG", "GGGGÇGGGG", "GGGGG%GGG",
-                "GGG&GGGGG", "GGG)GGGGG", "GGGGG_GGG", "AT1CAT", "ATaCAT", "ATcCGT", "ATgCAT", "ATtCAT"};
+    @Test
+    public void isInvalidItensNotNxN() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_VALID_NOT_NXN));
+    }
 
-        assertFalse(MutantService.isValidItens(invalidDna));
+    @Test
+    public void isInvalidItensEmpty() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_WITH_EMPTY_FILDS));
+    }
+
+    @Test
+    public void isInvalidItensLessThan4itens() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_WITH_LESS_THAN_4_FIELDS_INTERLEAVED));
+    }
+
+    @Test
+    public void isInvalidItensSpecialItens() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_WITH_SPECIAL_CHARACTERS));
+    }
+
+    @Test
+    public void isInvalidItensSpecialItens2() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_WITH_LESS_SPECIAL_ITENS));
     }
 }
