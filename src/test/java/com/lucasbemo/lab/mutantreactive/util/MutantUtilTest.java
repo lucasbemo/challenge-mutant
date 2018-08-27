@@ -247,7 +247,7 @@ public class MutantUtilTest {
     public static String[] DNA_NOT_MUTANT = {
             "TTGCAT",
             "TACGTA",
-            "TTGCAT",
+            "GTGCAT",
             "TACGTA",
             "ATGCAT",
             "TACGTA"
@@ -298,5 +298,19 @@ public class MutantUtilTest {
             "TTTTTTT",
             "CCCCCCCC",
             "GGGGGGGGG",
+    };
+
+    public static String[] DNA_VALID_LETTERS_NOT_PERMITED = {
+            "ATGCOT",
+            "AAAAAA",
+            "AAAAAA",
+            "TTTTTT",
+            "CCCCCC",
+            "GGGGGG",
+    };
+
+    public static String[] DNA_INVALID_LESS_THAN_4_ITENS = {
+            "ATGCGT",
+            "AAAAAA"
     };
 }

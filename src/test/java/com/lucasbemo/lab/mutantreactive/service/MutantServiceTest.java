@@ -171,4 +171,24 @@ public class MutantServiceTest {
     public void isInvalidItensSpecialItens2() throws Exception {
         assertFalse(MutantService.isMutant(MutantUtilTest.DNA_WITH_LESS_SPECIAL_ITENS));
     }
+
+    @Test
+    public void isNotMutant() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_NOT_MUTANT));
+    }
+
+    @Test
+    public void isNotMutantNull() throws Exception {
+        assertFalse(MutantService.isMutant(null));
+    }
+
+    @Test
+    public void isNotMutantLettersNotPermited() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_VALID_LETTERS_NOT_PERMITED));
+    }
+
+    @Test
+    public void isNotMutantLessThan4Itens() throws Exception {
+        assertFalse(MutantService.isMutant(MutantUtilTest.DNA_INVALID_LESS_THAN_4_ITENS));
+    }
 }
