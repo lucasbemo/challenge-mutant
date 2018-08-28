@@ -8,5 +8,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface VerificationEventRepository extends MongoRepository<VerificationEvent, String> {
 
-
+    public Long countByIsMutant(boolean isMutant);
 }
