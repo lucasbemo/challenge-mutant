@@ -20,5 +20,6 @@ run-full:
 	docker-compose up -d
 
 get-started:
+	make run-database
 	make build-app
 	docker-compose up -d
