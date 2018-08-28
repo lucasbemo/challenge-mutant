@@ -17,5 +17,3 @@ services:
     - 9000:8080
     links:
     - challenge-mutant-database
-    environment:
-      SPRING_DATA_MONGODB_URI: mongodb://mongodb/customer
