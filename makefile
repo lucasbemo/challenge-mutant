@@ -4,7 +4,7 @@ build-app:
 	./gradlew clean build
 
 run-app:
-	./gradlew bootRun
+	./gradlew bootRun -Dspring.profiles.active=local
 
 
 build-app-image:

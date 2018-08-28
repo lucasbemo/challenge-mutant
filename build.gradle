@@ -21,6 +21,12 @@ version '1.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+//def profiles = 'local'
+bootRun {
+    systemProperties = System.properties
+}
+
+
 repositories {
     mavenCentral()
 }
