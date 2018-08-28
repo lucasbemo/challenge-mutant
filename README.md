@@ -24,7 +24,6 @@ Body: {"dna": ["TTTTTT", "TACGTA", "ATGCAT", "TACGCA", "ATGTAT", "TATGTA"]}
 curl -d '{"dna": ["TTTTTT", "TACGTA", "ATGCAT", "TACGCA", "ATGTAT", "TATGTA"]}' -H "Content-Type: application/json" -X POST http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/mutant/
 ```
 
-Action: POST
 ```
 http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/mutant/
 ```
@@ -44,6 +43,11 @@ http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/mutant/
 
 
 ## Getting Started Localmente
+
+**Requerimento**
+* Java (no mínimo a versão 8)
+* docker
+* docker-compose
 
 Para ter todo o ambiente local rodando, basta executar o comando:
 
