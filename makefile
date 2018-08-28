@@ -3,8 +3,22 @@ SHELL := /bin/bash
 build-app:
 	./gradlew clean build
 
-build-docker-image:
+run-app:
+	./gradlew bootRun
+
+
+build-app-image:
 	docker build -t challenge-mutant .
 
-run-app-image:
+run-app-docker:
 	docker run -d -p 9000:8080 challenge-mutant
+
+run-database:
+	docker-compose up -d challenge-mutant-database
+
+run-full:
+	docker-compose up -d
+
+get-started:
+	make build-app
+	docker-compose up -d

@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  challenge-mutant-database:
+    container_name: challenge-mutant-database
+    image: mongo:3.6
+
+  challenge-mutant-app:
+    container_name: challenge-mutant-app
+    build: .
+    depends_on:
+    - challenge-mutant-database
+    ports:
+    - 9000:8080
+    links:
+    - challenge-mutant-database
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb/customer
