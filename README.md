@@ -9,37 +9,37 @@ E as Letras informadas na String só pode ser (A,T,C,G).
 
 A API irá informar se o Humano do DNA informado é um Mutante, se o DNA conter mais de uma sequência de quatro letras iguas de forma oblicua, horizontal ou vertical
 
+
+### Invocando API hospedada na cloud.
+
+##### /mutant/
+
 Especificação da API:
 ```
-API: isMutant
+API: Mutant
 Action: POST
 URL: http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/mutant/
 Body: {"dna": ["TTTTTT", "TACGTA", "ATGCAT", "TACGCA", "ATGTAT", "TATGTA"]}
+Description: Retorna 200 caso o DNA informado seja de um Mutant, caso contrario, retorno é 403.
 ```
-
-
-### Invocando API hospedada na cloud.
 
 ```sh
 curl -d '{"dna": ["TTTTTT", "TACGTA", "ATGCAT", "TACGCA", "ATGTAT", "TATGTA"]}' -H "Content-Type: application/json" -X POST http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/mutant/
 ```
 
+##### /stats/
+
+Especificação da API:
 ```
-http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/mutant/
-```
-```javascript
-{
-	"dna": [
-		"TTTTTT",
-		"TACGTA",
-		"ATGCAT",
-		"TACGCA",
-		"ATGTAT",
-		"TATGTA"
-	]
-}
+API: stats
+Action: GET
+URL: http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/stats/
+Description: Retorna dados estatísticos do uso da API /mutant.
 ```
 
+```sh
+curl -H "Content-Type: application/json" -X GET http://ec2-52-90-72-224.compute-1.amazonaws.com:9000/stats/
+```
 
 
 ## Getting Started Localmente
@@ -57,11 +57,12 @@ make get-started
 
 Após ter todo o ambiente executando na sua máquina, invoque a API localmente passando uma sequência de DNA.
 
+- Verificando um DNA Mutante.
 ```sh
-curl -d '{"dna": ["TTTTTT", "TACGTA", "ATGCAT", "TACGCA", "ATGTAT", "TATGTA"]}' -H "Content-Type: application/json" -X POST http://localhost:9000/mutant/
+curl -d '{"dna": ["TTTTTT", "TACGTA", "ATGCAT", "TACGCT", "ATGTAT", "TATGTT"]}' -H "Content-Type: application/json" -X POST http://localhost:9000/mutant/
 ```
 
-Você terá o retorno 200:
+Você terá o HttpStatusCode 200:
 
 ```json
 {
@@ -74,6 +75,27 @@ Você terá o retorno 200:
         "TATGTA"
     ],
     "isMutant": true
+}
+```
+
+- Verificando um DNA Não Mutante.
+```sh
+curl -d '{"dna": ["TTTGTT", "TACGTA", "ATGCAT", "TACGCT", "ATGTAT", "TATGTT"]}' -H "Content-Type: application/json" -X POST http://localhost:9000/mutant/
+```
+
+Você terá o HttpStatusCode 403:
+
+```json
+{
+    "dna": [
+        "TTTTTT",
+        "TACGTA",
+        "ATGCAT",
+        "TACGCA",
+        "ATGTAT",
+        "TATGTA"
+    ],
+    "isMutant": false
 }
 ```
 
