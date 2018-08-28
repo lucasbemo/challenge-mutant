@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * @author lucasbemo
  */
-
 @ResponseStatus(value = HttpStatus.FORBIDDEN)
 public class MutantException extends RuntimeException {
 

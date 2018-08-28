@@ -5,6 +5,8 @@ services:
   challenge-mutant-database:
     container_name: challenge-mutant-database
     image: mongo:3.6
+    ports:
+    - 27017:27017
 
   challenge-mutant-app:
     container_name: challenge-mutant-app

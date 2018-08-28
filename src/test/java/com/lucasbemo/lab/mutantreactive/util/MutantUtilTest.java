@@ -10,7 +10,7 @@ public class MutantUtilTest {
     /* =============  */
 
     // Vertical Options.
-    public static String[] DNA_MUTANT_HORIZONTAL_LINE_0_COLUMN_0 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LINE_0_COLUMN_0 = {
             "AAAAGT",
             "TACGTA",
             "ATGCAT",
@@ -18,7 +18,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LINE_0_COLUMN_1 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LINE_0_COLUMN_1 = {
             "ATTTTG",
             "TACGTA",
             "ATGCAT",
@@ -26,7 +26,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LINE_0_COLUMN_2 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LINE_0_COLUMN_2 = {
             "ATGGGG",
             "TACGTA",
             "ATGCAT",
@@ -34,7 +34,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LINE_1_COLUMN_0 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LINE_1_COLUMN_0 = {
             "ATGCAT",
             "AAAAGT",
             "ATGCAT",
@@ -42,7 +42,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LINE_1_COLUMN_1 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LINE_1_COLUMN_1 = {
             "ATGCAT",
             "ATTTTG",
             "ATGCAT",
@@ -50,7 +50,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LINE_1_COLUMN_2 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LINE_1_COLUMN_2 = {
             "ATGCAT",
             "ATGGGG",
             "ATGCAT",
@@ -58,7 +58,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LAST_LINE_COLUMN_0 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LAST_LINE_COLUMN_0 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -66,7 +66,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "AAAAGT"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LAST_LINE_COLUMN_1 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LAST_LINE_COLUMN_1 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -74,7 +74,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "ATTTTG"
     };
-    public static String[] DNA_MUTANT_HORIZONTAL_LAST_LINE_COLUMN_2 = {
+    public static String[] DNA_MUTANT_1_HORIZONTAL_LAST_LINE_COLUMN_2 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -82,9 +82,17 @@ public class MutantUtilTest {
             "ATGCAT",
             "ATGGGG"
     };
+    public static String[] DNA_MUTANT_2_HORIZONTAL = {
+            "AAAAGT",
+            "TACGTA",
+            "ATGCAT",
+            "TACGTA",
+            "ATGCAT",
+            "TCCCCA"
+    };
 
     // Horizontal Options.
-    public static String[] DNA_MUTANT_VERTICAL_COLUMN_0_LINE_0 = {
+    public static String[] DNA_MUTANT_1_VERTICAL_COLUMN_0_LINE_0 = {
             "TTGCAT",
             "TACGTA",
             "TTGCAT",
@@ -92,7 +100,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_VERTICAL1_COLUMN_0_LINE_1 = {
+    public static String[] DNA_MUTANT_1_VERTICAL1_COLUMN_0_LINE_1 = {
             "ATGCAT",
             "TACGTA",
             "TTGCAT",
@@ -100,15 +108,15 @@ public class MutantUtilTest {
             "TTGCAT",
             "AACGTA"
     };
-    public static String[] DNA_MUTANT_VERTICAL_COLUMN_0_LINE_2 = {
-            "AAAAGT",
+    public static String[] DNA_MUTANT_1_VERTICAL_COLUMN_0_LINE_2 = {
+            "AAGAGT",
             "GACGTA",
             "TTGCAT",
             "TACGTA",
             "TTGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_VERTICAL_COLUMN_1_LINE_0 = {
+    public static String[] DNA_MUTANT_1_VERTICAL_COLUMN_1_LINE_0 = {
             "ATGCAT",
             "TTCGTA",
             "ATGCAT",
@@ -116,7 +124,7 @@ public class MutantUtilTest {
             "AGGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_VERTICAL_COLUMN_1_LINE_1 = {
+    public static String[] DNA_MUTANT_1_VERTICAL_COLUMN_1_LINE_1 = {
             "ATGCAT",
             "TACGTA",
             "AAGCAT",
@@ -124,7 +132,7 @@ public class MutantUtilTest {
             "AAGCAT",
             "TGCGTA"
     };
-    public static String[] DNA_MUTANT_VERTICAL_COLUMN_1_LINE_2 = {
+    public static String[] DNA_MUTANT_1_VERTICAL_COLUMN_1_LINE_2 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -132,7 +140,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TTCGTA"
     };
-    public static String[] DNA_MUTANT_VERTICAL_LAST_COLUMN_LINE_0 = {
+    public static String[] DNA_MUTANT_1_VERTICAL_LAST_COLUMN_LINE_0 = {
             "ATGCAT",
             "TACGTT",
             "ATGCAT",
@@ -140,7 +148,7 @@ public class MutantUtilTest {
             "ATGCAG",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_VERTICAL_LAST_COLUMN_LINE_1 = {
+    public static String[] DNA_MUTANT_1_VERTICAL_LAST_COLUMN_LINE_1 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAA",
@@ -148,7 +156,7 @@ public class MutantUtilTest {
             "ATGCAA",
             "TACGTG"
     };
-    public static String[] DNA_MUTANT_VERTICAL_LAST_COLUMN_LINE_2 = {
+    public static String[] DNA_MUTANT_1_VERTICAL_LAST_COLUMN_LINE_2 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -156,9 +164,20 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTT"
     };
+    public static String[] DNA_MUTANT_2_VERTICAL = {
+            "TTGCAT",
+            "TACGTC",
+            "TTGCAA",
+            "TACGTA",
+            "ATGCAA",
+            "TACGTA"
+    };
 
+    /* ======================= */
     // Oblique from Left Options.
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_LEFT_COLUMN_0_LAST_POSSIBLE_LINE = {
+    /* ======================= */
+
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_LEFT_COLUMN_0_LAST_POSSIBLE_LINE = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -166,7 +185,7 @@ public class MutantUtilTest {
             "ATACAT",
             "TACATA"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_LEFT_COLUMN_0_LINE_1 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_LEFT_COLUMN_0_LINE_1 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -182,7 +201,7 @@ public class MutantUtilTest {
             "ATGCGT",
             "TACGTC"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_LEFT_COLUMN_1_LINE_0 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_LEFT_COLUMN_1_LINE_0 = {
             "ATGCAT",
             "TATGTA",
             "ATGTAT",
@@ -190,7 +209,7 @@ public class MutantUtilTest {
             "ATGCAC",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_LEFT_COLUMN_2_LINE_0 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_LEFT_COLUMN_2_LINE_0 = {
             "ATGCAT",
             "TACGTA",
             "ATGCGT",
@@ -198,7 +217,7 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_RIGHT_LAST_COLUMN_LINE_2 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_RIGHT_LAST_COLUMN_LINE_2 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -206,7 +225,7 @@ public class MutantUtilTest {
             "ATGTAT",
             "TATGTA"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_RIGHT_LAST_COLUMN_LINE_1 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_RIGHT_LAST_COLUMN_LINE_1 = {
             "ATGCAT",
             "TACGTA",
             "ATGCAT",
@@ -214,7 +233,7 @@ public class MutantUtilTest {
             "ATACAT",
             "TGCGTA"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_RIGHT_LAST_COLUMN_LINE_0 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_RIGHT_LAST_COLUMN_LINE_0 = {
             "ATGCAT",
             "TACGTA",
             "ATGTAT",
@@ -222,7 +241,7 @@ public class MutantUtilTest {
             "ACGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_RIGHT_COLUMN_4_LINE_0 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_RIGHT_COLUMN_4_LINE_0 = {
             "ATGCAT",
             "TACATA",
             "ATACAT",
@@ -230,7 +249,7 @@ public class MutantUtilTest {
             "TTGCAT",
             "TACGTA"
     };
-    public static String[] DNA_MUTANT_OBLIQUE_FROM_RIGHT_COLUMN_3_LINE_0 = {
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_RIGHT_COLUMN_3_LINE_0 = {
             "ATGCAT",
             "TACGTA",
             "ACGCAT",
@@ -238,11 +257,88 @@ public class MutantUtilTest {
             "ATGCAT",
             "TACGTA"
     };
+    public static String[] DNA_MUTANT_2_OBLIQUE_FROM_LEFT = {
+            "ATGCAT",
+            "TACGTA",
+            "ATGCGT",
+            "TACGTG",
+            "ATACAT",
+            "TACATA"
+    };
+    public static String[] DNA_MUTANT_2_OBLIQUE_FROM_RIGHT = {
+            "ATGTAT",
+            "TATGTA",
+            "ATGCAT",
+            "TACGTA",
+            "ATGTAT",
+            "TATGTA"
+    };
+
+    /* ===========================  */
+    /* DNAs Mutants Layouts Mistos. */
+    /* ===========================  */
+
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_LEFT_1_OBLIQUE_FROM_RIGHT = {
+            "ATGCAT",
+            "TACGTA",
+            "ATGTAT",
+            "TATGTA",
+            "AGACAT",
+            "TACATA"
+    };
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_LEFT_1_VERTICAL = {
+            "ATGCAT",
+            "TAGGTA",
+            "ATGCAT",
+            "TAGGTA",
+            "ATACAT",
+            "TACATA"
+    };
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_LEFT_1_HORIZONTAL = {
+            "ATGCAT",
+            "TACGCA",
+            "ATGTGT",
+            "TAAGTG",
+            "ATGCAT",
+            "TAGGGG"
+    };
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_RIGHT_1_VERTICAL = {
+            "ATGCTT",
+            "TACGTA",
+            "ACGCTT",
+            "CACATA",
+            "ATGCAT",
+            "TACGTA"
+    };
+    public static String[] DNA_MUTANT_1_OBLIQUE_FROM_RIGHT_1_HORIZONTAL = {
+            "TACGTA",
+            "ATGCAT",
+            "CCCCTA",
+            "ATGTAT",
+            "TATGTA",
+            "TATGTA"
+    };
+    public static String[] DNA_MUTANT_1_VERTICAL_1_HORIZONTAL = {
+            "ATGCAT",
+            "TACGTA",
+            "TTTTAA",
+            "TACGTA",
+            "ATGCAA",
+            "TACGTC"
+    };
+    public static String[] DNA_MUTANT_1_VERTICAL_1_HORIZONTAL_1_OBLIQUE_FROM_RIGHT = {
+            "AAAACT",
+            "TACGTA",
+            "ACGCAT",
+            "TCCGTA",
+            "ACGTAT",
+            "TCTGTA"
+    };
 
 
-    /* =============     */
+    /* ================= */
     /* DNAs Not Mutants. */
-    /* =============     */
+    /* ================= */
 
     public static String[] DNA_NOT_MUTANT = {
             "TTGCAT",
@@ -254,9 +350,9 @@ public class MutantUtilTest {
     };
 
 
-    /* =============   */
+    /* =============== */
     /* DNAs Inválidos. */
-    /* =============   */
+    /* =============== */
 
     public static String[] DNA_WITH_EMPTY_FILDS = {
             "",
@@ -300,7 +396,7 @@ public class MutantUtilTest {
             "GGGGGGGGG",
     };
 
-    public static String[] DNA_VALID_LETTERS_NOT_PERMITED = {
+    public static String[] DNA_INVALID_LETTERS_NOT_PERMITED = {
             "ATGCOT",
             "AAAAAA",
             "AAAAAA",

@@ -1,8 +1,5 @@
 package com.lucasbemo.lab.mutantreactive.service;
 
-import org.springframework.stereotype.Service;
-
-import java.rmi.server.ExportException;
 import java.util.Arrays;
 
 /**
@@ -18,20 +15,26 @@ public class MutantService {
      * @return
      */
     public static boolean isMutant(String[] dna)  {
+        int matchedSequence = 0;
 
         if (!MutantService.isValidDna(dna)) {
             return false;
         }
 
-        if (MutantService.matchHorizontal(dna)) {
+        matchedSequence = matchedSequence + MutantService.matchHorizontal(dna);
+
+        if (matchedSequence>=2)
             return true;
-        }
-        if (MutantService.matchVertical(dna)) {
+
+        matchedSequence = matchedSequence + MutantService.matchVertical(dna);
+
+        if (matchedSequence>=2)
             return true;
-        }
-        if (MutantService.matchOblique(dna)) {
+
+        matchedSequence = matchedSequence + MutantService.matchOblique(dna);
+
+        if (matchedSequence>=2)
             return true;
-        }
 
         return false;
     }
@@ -110,8 +113,9 @@ public class MutantService {
      * @param dna
      * @return
      */
-    public static boolean matchHorizontal(String[] dna) {
-        int repetedItem =0;
+    public static int matchHorizontal(String[] dna) {
+        int matchedItens = 0;
+        int matchDna = 0;
 
         for (String item: dna) {
             char matchToken = item.charAt(0);
@@ -120,22 +124,26 @@ public class MutantService {
                 char token = item.charAt(columnIdx);
 
                 if (matchToken == token) {
-                    repetedItem++;
+                    matchedItens++;
                 } else {
-                    repetedItem = 0;
+                    matchedItens = 0;
                     matchToken = token;
                 }
 
-                if (repetedItem == 3) {
+                if (matchedItens == 3) {
+                    matchDna++;
+                    matchedItens = 0;
+                }
+                if (matchDna >= 2) {
                     break;
                 }
             }
 
-            if (repetedItem == 3) {
+            if (matchDna >= 2) {
                 break;
             }
         }
-        return (repetedItem == 3? true: false);
+        return matchDna;
     }
 
     /**
@@ -143,8 +151,9 @@ public class MutantService {
      * @param dna
      * @return
      */
-    public static boolean matchVertical(String[] dna) {
+    public static int matchVertical(String[] dna) {
         int matchedItens = 0;
+        int matchDna = 0;
 
         for (int columnIdx = 0; columnIdx < dna.length; columnIdx++) {
             char previousToken = dna[0].charAt(columnIdx);
@@ -160,16 +169,20 @@ public class MutantService {
                 }
 
                 if (matchedItens == 3) {
+                    matchDna++;
+                    matchedItens = 0;
+                }
+                if (matchDna >= 2) {
                     break;
                 }
             }
 
-            if (matchedItens == 3) {
+            if (matchDna >= 2) {
                 break;
             }
         }
 
-        return (matchedItens == 3? true: false);
+        return matchDna;
     }
 
     /**
@@ -177,21 +190,27 @@ public class MutantService {
      * @param dna
      * @return
      */
-    public static boolean matchOblique(String[] dna) {
-        if (MutantService.matchObliqueFromLeft(dna)) {
-            return true;
+    public static int matchOblique(String[] dna) {
+        int matchedSequence = 0;
+
+        matchedSequence = matchedSequence + MutantService.matchObliqueFromLeft(dna);
+        if (matchedSequence >= 2) {
+            return matchedSequence;
         }
-        if (MutantService.matchObliqueFromRight(dna)) {
-            return true;
+        matchedSequence = matchedSequence + MutantService.matchObliqueFromRight(dna);
+        if (matchedSequence >= 2) {
+            return matchedSequence;
         }
-        return false;
+
+        return matchedSequence;
     }
 
-    private static boolean matchObliqueFromLeft(String[] dna) {
+    public static int matchObliqueFromLeft(String[] dna) {
         int matchedItens = 0;
         int halfMatrix = 0;
+        int matchDna = 0;
 
-        for (int lineIdxInitial = dna.length-1, columnIdxInitial=0; halfMatrix <= dna[0].length();) {
+        for (int lineIdxInitial = dna.length-1, columnIdxInitial=0; halfMatrix <= dna[0].length() - 1;) {
 
             char previousToken = dna[lineIdxInitial].charAt(columnIdxInitial);
 
@@ -208,8 +227,16 @@ public class MutantService {
                 }
 
                 if (matchedItens == 3) {
+                    matchDna++;
+                    matchedItens = 0;
+                }
+                if (matchDna >= 2) {
                     break;
                 }
+            }
+
+            if (matchDna >= 2) {
+                break;
             }
 
             if (matchedItens == 3) {
@@ -223,19 +250,23 @@ public class MutantService {
                     halfMatrix++;
                     if (halfMatrix > 1) {
                         columnIdxInitial++;
+                    } else {
+                        columnIdxInitial++;
+                        lineIdxInitial = 0;
                     }
                 }
             }
         }
 
-        return (matchedItens == 3? true: false);
+        return matchDna;
     }
 
-    private static boolean matchObliqueFromRight(String[] dna) {
+    public static int matchObliqueFromRight(String[] dna) {
         int matchedItens = 0;
         int halfMatrix = 0;
+        int matchDna = 0;
 
-        for (int lineIdxInitial = dna.length-1, columnIdxInitial=dna.length-1; halfMatrix <= dna[0].length();) {
+        for (int lineIdxInitial = dna.length-1, columnIdxInitial=dna.length-1; halfMatrix <= dna[0].length()-1;) {
 
             char previousToken = dna[lineIdxInitial].charAt(columnIdxInitial);
 
@@ -252,8 +283,16 @@ public class MutantService {
                 }
 
                 if (matchedItens == 3) {
+                    matchDna++;
+                    matchedItens = 0;
+                }
+                if (matchDna >= 2) {
                     break;
                 }
+            }
+
+            if (matchDna >= 2) {
+                break;
             }
 
             if (matchedItens == 3) {
@@ -268,11 +307,14 @@ public class MutantService {
 
                     if (halfMatrix > 1) {
                         columnIdxInitial--;
+                    } else {
+                        columnIdxInitial = dna.length-2;
+                        lineIdxInitial++;
                     }
                 }
             }
         }
 
-        return (matchedItens == 3? true: false);
+        return matchDna;
     }
 }
