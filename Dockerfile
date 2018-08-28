@@ -9,5 +9,5 @@ VOLUME /tmp
 ARG JAR_FILE=build/libs/challenge-mutant-*.jar
 
 COPY ${JAR_FILE} app.jar
-##"-Dspring.profiles.active=local",
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=prod","-jar","/app.jar"]

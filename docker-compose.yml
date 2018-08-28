@@ -4,12 +4,15 @@ services:
 
   challenge-mutant-database:
     container_name: challenge-mutant-database
+    hostname: mongo.mutant
     image: mongo:3.6
+    network_mode: "bridge"
     ports:
     - 27017:27017
 
   challenge-mutant-app:
     container_name: challenge-mutant-app
+    network_mode: "bridge"
     build: .
     depends_on:
     - challenge-mutant-database
