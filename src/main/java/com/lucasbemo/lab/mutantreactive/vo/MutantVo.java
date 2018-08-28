@@ -25,7 +25,7 @@ public class MutantVo implements Serializable {
     public MutantVo(){}
 
     @JsonCreator
-    public MutantVo(String[] dna) throws Exception {
+    public MutantVo(@JsonProperty("dna")String[] dna) throws Exception {
         this.dna = dna;
         this.mutant = MutantService.isMutant(this.dna);
     }

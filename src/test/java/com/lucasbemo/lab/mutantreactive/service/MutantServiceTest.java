@@ -1,10 +1,8 @@
 package com.lucasbemo.lab.mutantreactive.service;
 
-import com.lucasbemo.lab.mutantreactive.App;
 import com.lucasbemo.lab.mutantreactive.util.MutantUtilTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertFalse;
